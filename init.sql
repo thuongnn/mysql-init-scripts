@@ -1,31 +1,24 @@
-USE `mysql`;
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
 
-DROP TABLE IF EXISTS
-    `kubedb_table`;
+-- ----------------------------
+-- Table structure for user
+-- ----------------------------
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `userName` varchar(50) NOT NULL,
+  `full_name` varchar(50) NOT NULL,
+  `phone_number` varchar(24) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
-CREATE TABLE `kubedb_table`(
-    `id` BIGINT(20) NOT NULL,
-    `name` VARCHAR(255) DEFAULT NULL
-);
+-- ----------------------------
+-- Records of user
+-- ----------------------------
+BEGIN;
+INSERT INTO `user` VALUES (1, 'admin', 'Nguyen Nhu Thuong', '0986352227', 'thuongnnse05095@fpt.edu.vn');
+COMMIT;
 
---
--- Dumping data for table `kubedb_table`
---
-
-INSERT INTO `kubedb_table`(`id`, `name`)
-VALUES(1, 'name1'),(2, 'name2'),(3, 'name3');
-
---
--- Indexes for table `kubedb_table`
---
-
-ALTER TABLE
-    `kubedb_table` ADD PRIMARY KEY(`id`);
-
---
--- AUTO_INCREMENT for table `kubedb_table`
---
-
-ALTER TABLE
-    `kubedb_table` MODIFY `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
-    AUTO_INCREMENT = 4;
+SET FOREIGN_KEY_CHECKS = 1;
