@@ -2067,7 +2067,7 @@ CREATE TABLE `room_group` (
   `bedroom_quantity` int(5) DEFAULT '1' COMMENT 'Number of  bedrooms in the building',
   `bathroom_quantity` int(5) DEFAULT '1' COMMENT 'Number of bathrooms in the building',
   `direction` varchar(255) DEFAULT NULL COMMENT 'direction of the room',
-  `is_available` bit(1) DEFAULT b'1' COMMENT 'The group is available or not',
+  `is_available` tinyint(1) DEFAULT '1' COMMENT 'The group is available or not',
   `deposit_price` double(10,0) DEFAULT NULL COMMENT 'Deposit price of the room group',
   `description` text COMMENT 'Description of the room group',
   `capacity` int(10) DEFAULT '1' COMMENT 'Capacity of the room group',
